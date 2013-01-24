@@ -1,11 +1,9 @@
 -include local.mk
 
-GAME_ROOT?=	../..
+GAME_ROOT?=	..
 FTL_FILES=	$(shell find source -name *.ftl)
 FTL_SCRIPTS=	$(wildcard source/*-bg2.ftl)
 BS_SCRIPTS=	$(patsubst source/%, build/%, $(patsubst %.ftl, %.bs, $(FTL_SCRIPTS)))
-
-fmpp=		tools/fmpp/bin/fmpp
 
 .SUFFIXES: .ftl .bs .baf
 .PRECIOUS: .bs .baf
@@ -14,11 +12,28 @@ all: $(BS_SCRIPTS)
 
 build/%.baf: source/%.ftl $(FTL_FILES) $(fmpp)
 	@mkdir -p -v build
-	$(fmpp) $< -o $@
+	tools/fmpp/bin/fmpp $< -o $@
 	@sed -i '/^$$/N;/\n$$/D' "$@"
 
-build/%-bg2.bs: build/%-bg2.baf
-	./compile.sh bg2 $< $@
+build/fmpp.zip:
+	@mkdir -pv build
+	@wget -O build/fmpp.zip http://downloads.sourceforge.net/project/fmpp/fmpp/0.9.14/fmpp_0.9.14.zip
+
+tools/fmpp/bin/fmpp: build/fmpp.zip
+	@mkdir -pv "tools"
+	@unzip -o -d tools/ build/fmpp.zip
+	@mv -v tools/fmpp_* tools/fmpp
+
+build/%-bg2.bs: build/%-bg2.baf aicompile.sh aicompile-bg2
+	./aicompile.sh bg2 $< $@
+
+aicompile-bg2: tools/aicompile/bg2/aicompile.exe
+
+tools/aicompile/bg2/aicompile.exe:
+	@mkdir -pv "tools/aicompile/bg2"
+	@mkdir -pv build
+	@cd build && wget http://download.trancecode.org/infinity/bg2/bg2-aicompiler.zip
+	@unzip -o -d tools/aicompile/bg2/ build/bg2-aicompiler.zip
 
 install: $(BS_SCRIPTS)
 	@cp -v $+ $(GAME_ROOT)/scripts
@@ -34,4 +49,3 @@ debug:
 	@echo "BS_SCRIPTS = $(BS_SCRIPTS)"
 
 #TODO install cygwin packages automatically
-#TODO install fmpp automatically
