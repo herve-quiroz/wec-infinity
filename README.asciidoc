@@ -1,0 +1,54 @@
+wec-infinity
+============
+
+Infinity engine AI scripts.
+
+// vim: set syntax=asciidoc:
+// vim: set spell:
+
+== Details
+
+Supported games:
+
+- Baldur's Gate 2
+
+== Requirements
+
+- http://cygwin.com/setup.exe[Cygwin] with the following packages:
+** make
+** wget
+** sed
+- http://www.oracle.com/technetwork/java/javase/downloads/index.html[Java Runtime] (JRE is fine)
+
+== Installation
+
+- https://help.github.com/articles/set-up-git[Setup Git]
+- Clone the repository in your game directory: `git clone
+  https://github.com/herve-quiroz/wec-infinity.git`
+- Run Cygwin
+- From the `wec-infinity` directory run: `make install`
+
+The first time you run the above command, the needed tools will be downloaded
+and installed (e.g. http://fmpp.sourceforge.net[FMPP], the `AICompile.exe` for
+each supported game). This should take only a few minutes and will happen only
+once.
+
+The scripts will then be compiled and installed into your game directory. Next
+time you run the game you will be able to use the compiled scripts from the
+character screen.
+
+== Developer information
+
+=== Documentation
+
+=== Additional tools
+
+== TODO
+
+- Icewind Dale support (scripts already implemented but we need compilation
+  support)
+- Icewind Dale 2 support
+** Compiler
+** Scripts
+
+== Release notes
