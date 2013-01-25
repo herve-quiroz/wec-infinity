@@ -10,16 +10,14 @@ BS_SCRIPTS=	$(patsubst source/%, build/%, $(patsubst %.ftl, %.bs, $(FTL_SCRIPTS)
 
 all: $(BS_SCRIPTS)
 
-build/%.baf: source/%.ftl $(FTL_FILES) $(fmpp)
+build/%.baf: source/%.ftl $(FTL_FILES) tools/fmpp/bin/fmpp
 	@mkdir -p -v build
 	tools/fmpp/bin/fmpp $< -o $@
 	@sed -i '/^$$/N;/\n$$/D' "$@"
 
-build/fmpp.zip:
+tools/fmpp/bin/fmpp:
 	@mkdir -pv build
 	@wget -O build/fmpp.zip http://downloads.sourceforge.net/project/fmpp/fmpp/0.9.14/fmpp_0.9.14.zip
-
-tools/fmpp/bin/fmpp: build/fmpp.zip
 	@mkdir -pv "tools"
 	@unzip -o -d tools/ build/fmpp.zip
 	@mv -v tools/fmpp_* tools/fmpp
