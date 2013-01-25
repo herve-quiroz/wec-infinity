@@ -3,17 +3,17 @@
 <#include "../util/variables.ftl"/>
 <#include "../util/config.ftl"/>
 
-<#if supportedClasses?seq_contains("cleric")
-  || supportedClasses?seq_contains("druid")
-  || supportedClasses?seq_contains("paladin")
-  || supportedClasses?seq_contains("ranger")
+<#if supported_classes?seq_contains("cleric")
+  || supported_classes?seq_contains("druid")
+  || supported_classes?seq_contains("paladin")
+  || supported_classes?seq_contains("ranger")
 >
 
 //------------------------------------------------------------------
 // priest spells: debuff
 //------------------------------------------------------------------
 
-<#if supportedClasses?seq_contains("cleric")>
+<#if supported_classes?seq_contains("cleric")>
 // curse
 IF
   <@canCastSpell "CLERIC_CURSE"/>
@@ -28,7 +28,7 @@ END
 </#if>
 
 <#--
-<#if supportedClasses?seq_contains("cleric")>
+<#if supported_classes?seq_contains("cleric")>
 // miscast magic
 IF
   <@canCastSpell "CLERIC_MISCAST_MAGIC"/>
@@ -45,7 +45,7 @@ END
 -->
 
 <#--
-<#if supportedClasses?seq_contains("cleric")>
+<#if supported_classes?seq_contains("cleric")>
 // invisibility purge
 IF
   <@canCastSpell "CLERIC_INVISIBILITY_PURGE"/>

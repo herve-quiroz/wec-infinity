@@ -10,7 +10,7 @@
 <#--
 // force melee attack up to ${combatModes.tank.rangedDistance}' if not immune to normal weapons
 IF
-<#list 1..numberOfPlayers as player>
+<#list 1..number_of_players as player>
   <#if playerCombat["Player" + player].mode != "tank">
   !Range(Player${player},0)
   </#if>
@@ -27,7 +27,7 @@ END
 
 // force melee attack up to 30' if immune to normal weapons
 IF
-<#list 1..numberOfPlayers as player>
+<#list 1..number_of_players as player>
   <#if playerCombat["Player" + player].mode != "tank">
   !Range(Player${player},0)
   </#if>
@@ -40,7 +40,7 @@ THEN
 END
 -->
 
-<#list 1..numberOfPlayers as player>
+<#list 1..number_of_players as player>
 <#if playerCombat["Player" + player].mode = "tank">
 // force melee attack for player ${player}
 IF

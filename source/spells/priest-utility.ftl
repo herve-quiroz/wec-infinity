@@ -3,7 +3,7 @@
 <#include "../util/hot-keys.ftl"/>
 <#include "../util/config.ftl"/>
 
-<#if supportedClasses?seq_contains("cleric")>
+<#if supported_classes?seq_contains("cleric")>
 
 //------------------------------------------------------------------
 // priest spells: utility

@@ -86,21 +86,21 @@
 </#macro>
 
 <#macro isEveryoneInRange range>
-  <#list 1..numberOfPlayers as player>
+  <#list 1..number_of_players as player>
   Range(Player${player},${range})
   </#list>
 </#macro>
 
 <#macro isAnyoneInRange range>
   Or(${numberOfPayers})
-  <#list 1..numberOfPlayers as player>
+  <#list 1..number_of_players as player>
     Range(Player${player},${range})
   </#list>
 </#macro>
 
 <#macro seeAllPlayers>
-  Or(${numberOfPlayers})
-  <#list 1..numberOfPlayers as player>
+  Or(${number_of_players})
+  <#list 1..number_of_players as player>
     See(Player${player})
   </#list>
 </#macro>

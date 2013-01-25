@@ -1,8 +1,8 @@
 <#-- vim: set syntax=ftl: -->
 
-<#if !supportedClasses?exists>
+<#if !supported_classes?exists>
   <#assign
-    supportedClasses = [
+    supported_classes = [
       "bard",
       "cleric",
       "druid",
@@ -44,8 +44,8 @@
   />
 </#if>
 
-<#if !numberOfPlayers?exists>
-  <#assign numberOfPlayers = 6 />
+<#if !number_of_players?exists>
+  <#assign number_of_players = 6 />
 </#if>
 
 <#if !enemyGroupSizes?exists>

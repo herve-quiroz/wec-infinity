@@ -4,17 +4,17 @@
 <#include "../util/variables.ftl"/>
 <#include "../util/config.ftl"/>
 
-<#if supportedClasses?seq_contains("cleric")
-  || supportedClasses?seq_contains("druid")
-  || supportedClasses?seq_contains("paladin")
-  || supportedClasses?seq_contains("ranger")
+<#if supported_classes?seq_contains("cleric")
+  || supported_classes?seq_contains("druid")
+  || supported_classes?seq_contains("paladin")
+  || supported_classes?seq_contains("ranger")
 >
 
 //------------------------------------------------------------------
 // priest spells: cure
 //------------------------------------------------------------------
 
-<#if supportedClasses?seq_contains("paladin")>
+<#if supported_classes?seq_contains("paladin")>
 // cure disease (paladin)
 IF
   <@canCastSpell "PALADIN_CURE_DISEASE"/>
@@ -28,7 +28,7 @@ THEN
 END
 </#if>
 
-<#if supportedClasses?seq_contains("cleric")>
+<#if supported_classes?seq_contains("cleric")>
 // remove fear
 IF
   <@canCastSpell "CLERIC_REMOVE_FEAR"/>
@@ -42,7 +42,7 @@ THEN
 END
 </#if>
 
-<#if supportedClasses?seq_contains("cleric")>
+<#if supported_classes?seq_contains("cleric")>
 // neutralize poison
 IF
   <@canCastSpell "CLERIC_NEUTRALIZE_POISON"/>
@@ -57,7 +57,7 @@ END
 </#if>
 
 <#--
-<#if supportedClasses?seq_contains("cleric")>
+<#if supported_classes?seq_contains("cleric")>
 // slow poison
 IF
   <@canCastSpell "CLERIC_SLOW_POISON"/>
@@ -72,7 +72,7 @@ END
 </#if>
 -->
 
-<#if supportedClasses?seq_contains("cleric")>
+<#if supported_classes?seq_contains("cleric")>
 // cure disease
 IF
   <@canCastSpell "CLERIC_CURE_DISEASE"/>
@@ -86,7 +86,7 @@ THEN
 END
 </#if>
 
-<#if supportedClasses?seq_contains("cleric")>
+<#if supported_classes?seq_contains("cleric")>
 // remove paralysis
 IF
   <@canCastSpell "CLERIC_REMOVE_PARALYSIS"/>
@@ -100,7 +100,7 @@ THEN
 END
 </#if>
 
-<#if supportedClasses?seq_contains("cleric")>
+<#if supported_classes?seq_contains("cleric")>
 // exaltation
 IF
   <@canCastSpell "CLERIC_EXALTATION"/>
@@ -120,7 +120,7 @@ THEN
 END
 </#if>
 
-<#if supportedClasses?seq_contains("cleric")>
+<#if supported_classes?seq_contains("cleric")>
 // free action
 IF
   <@canCastSpell "CLERIC_FREE_ACTION"/>

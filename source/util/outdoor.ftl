@@ -4,7 +4,7 @@
 <#include "../util/variables.ftl"/>
 <#include "../util/config.ftl"/>
 
-<#if supportedClasses?seq_contains("druid")>
+<#if supported_classes?seq_contains("druid")>
 
 //------------------------------------------------------------------
 // outdoor/indoor

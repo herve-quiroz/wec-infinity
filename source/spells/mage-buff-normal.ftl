@@ -4,7 +4,7 @@
 <#include "../util/macros.ftl"/>
 <#include "../util/config.ftl"/>
 
-<#if supportedClasses?seq_contains("mage")>
+<#if supported_classes?seq_contains("mage")>
 
 //------------------------------------------------------------------
 // mage spells: buff (normal mode)

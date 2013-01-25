@@ -4,10 +4,10 @@
 <#include "../util/macros.ftl"/>
 <#include "../util/config.ftl"/>
 
-<#if supportedClasses?seq_contains("cleric")
-  || supportedClasses?seq_contains("druid")
-  || supportedClasses?seq_contains("paladin")
-  || supportedClasses?seq_contains("ranger")
+<#if supported_classes?seq_contains("cleric")
+  || supported_classes?seq_contains("druid")
+  || supported_classes?seq_contains("paladin")
+  || supported_classes?seq_contains("ranger")
 >
 
 //------------------------------------------------------------------
@@ -15,7 +15,7 @@
 //------------------------------------------------------------------
 
 <#--
-<#if supportedClasses?seq_contains("cleric")>
+<#if supported_classes?seq_contains("cleric")>
 // entropy shield
 IF
   <@canCastSpell "CLERIC_ENTROPY_SHIELD"/>
@@ -30,7 +30,7 @@ END
 -->
 
 <#--
-<#if supportedClasses?seq_contains("cleric")>
+<#if supported_classes?seq_contains("cleric")>
 // chaotic commands
 IF
   <@canCastSpell "CLERIC_CHAOTIC_COMMANDS"/>
@@ -50,7 +50,7 @@ THEN
 END
 </#if>
 
-<#if supportedClasses?seq_contains("cleric")>
+<#if supported_classes?seq_contains("cleric")>
 // defensive harmony (6 rounds)
 IF
   <@canCastSpell "CLERIC_DEFENSIVE_HARMONY"/>
@@ -66,7 +66,7 @@ END
 -->
 
 <#if game = "iwd">
-<#if supportedClasses?seq_contains("cleric")>
+<#if supported_classes?seq_contains("cleric")>
 // greater shield of lathander
 IF
   <@canCastSpell "CLERIC_GREATER_SHIELD_OF_LATHANDER"/>
@@ -81,7 +81,7 @@ END
 </#if>
 
 <#if game = "iwd">
-<#if supportedClasses?seq_contains("cleric")>
+<#if supported_classes?seq_contains("cleric")>
 // righteous wrath of the faithful
 IF
   <@canCastSpell "CLERIC_RIGHTEOUS_WRATH_OF_THE_FAITHFUL"/>
@@ -97,8 +97,8 @@ END
 </#if>
 
 <#if game = "iwd">
-<#if supportedClasses?seq_contains("cleric")
-  || supportedClasses?seq_contains("paladin")>
+<#if supported_classes?seq_contains("cleric")
+  || supported_classes?seq_contains("paladin")>
 // recitation
 IF
   <@canCastSpell "CLERIC_RECITATION"/>
@@ -114,8 +114,8 @@ END
 </#if>
 </#if>
 
-<#if supportedClasses?seq_contains("cleric")
-  || supportedClasses?seq_contains("paladin")>
+<#if supported_classes?seq_contains("cleric")
+  || supported_classes?seq_contains("paladin")>
 // prayer
 IF
   <@canCastSpell "CLERIC_PRAYER"/>
@@ -130,7 +130,7 @@ END
 </#if>
 
 <#--
-<#if supportedClasses?seq_contains("cleric")>
+<#if supported_classes?seq_contains("cleric")>
 // chant
 IF
   <@canCastSpell "CLERIC_CHANT"/>
@@ -144,8 +144,8 @@ END
 </#if>
 -->
 
-<#if supportedClasses?seq_contains("cleric")
-  || supportedClasses?seq_contains("paladin")>
+<#if supported_classes?seq_contains("cleric")
+  || supported_classes?seq_contains("paladin")>
 // bless
 IF
   <@canCastSpell "CLERIC_BLESS"/>
@@ -161,7 +161,7 @@ END
 </#if>
 
 <#--
-<#if supportedClasses?seq_contains("cleric")>
+<#if supported_classes?seq_contains("cleric")>
 // draw upon holy might (10 rounds)
 IF
   <@canCastSpell "CLERIC_DRAW_UPON_HOLY_MIGHT"/>
@@ -174,7 +174,7 @@ END
 </#if>
 -->
 
-<#if supportedClasses?seq_contains("cleric")>
+<#if supported_classes?seq_contains("cleric")>
 // protection from evil 10' radius
 IF
   <@canCastSpell "CLERIC_PROTECTION_FROM_EVIL_10_RADIUS"/>
@@ -188,7 +188,7 @@ THEN
 END
 </#if>
 
-<#if supportedClasses?seq_contains("paladin")>
+<#if supported_classes?seq_contains("paladin")>
 // protection from evil (self)
 IF
   <@canCastSpell "PALADIN_PROTECTION_FROM_EVIL"/>

@@ -5,7 +5,7 @@
 
 <@section "targeting" />
 
-<#list 2..numberOfPlayers as player>
+<#list 2..number_of_players as player>
 <#assign distance = combatModes[playerCombat["Player" + player].mode].maximumDistanceToGroup />
 
 // player ${player}: abort targeting if not in range ${distance} of player 1

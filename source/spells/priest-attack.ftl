@@ -4,17 +4,17 @@
 <#include "../util/macros.ftl"/>
 <#include "../util/config.ftl"/>
 
-<#if supportedClasses?seq_contains("cleric")
-  || supportedClasses?seq_contains("druid")
-  || supportedClasses?seq_contains("paladin")
-  || supportedClasses?seq_contains("ranger")
+<#if supported_classes?seq_contains("cleric")
+  || supported_classes?seq_contains("druid")
+  || supported_classes?seq_contains("paladin")
+  || supported_classes?seq_contains("ranger")
 >
 
 //------------------------------------------------------------------
 // priest spells: attack
 //------------------------------------------------------------------
 
-<#if supportedClasses?seq_contains("druid")>
+<#if supported_classes?seq_contains("druid")>
 // earthquake
 IF
   <@canCastSpell "CLERIC_EARTHQUAKE"/>
@@ -25,8 +25,8 @@ THEN
 END
 </#if>
 
-<#if supportedClasses?seq_contains("cleric")
-  || supportedClasses?seq_contains("druid")
+<#if supported_classes?seq_contains("cleric")
+  || supported_classes?seq_contains("druid")
 >
 // destruction
 IF
@@ -39,8 +39,8 @@ THEN
 END
 </#if>
 
-<#if supportedClasses?seq_contains("cleric")
-  || supportedClasses?seq_contains("druid")
+<#if supported_classes?seq_contains("cleric")
+  || supported_classes?seq_contains("druid")
 >
 <#if alignments?seq_contains("evil")>
 // harm
@@ -62,8 +62,8 @@ END
 </#if>
 </#if>
 
-<#if supportedClasses?seq_contains("cleric")
-  || supportedClasses?seq_contains("druid")
+<#if supported_classes?seq_contains("cleric")
+  || supported_classes?seq_contains("druid")
 >
 // slay living
 IF
@@ -76,8 +76,8 @@ THEN
 END
 </#if>
 
-<#if supportedClasses?seq_contains("cleric")
-  || supportedClasses?seq_contains("druid")
+<#if supported_classes?seq_contains("cleric")
+  || supported_classes?seq_contains("druid")
 >
 <#list [ 15 ] as range>
 
@@ -95,8 +95,8 @@ END
 </#if>
 
 <#--
-<#if supportedClasses?seq_contains("cleric")
-  || supportedClasses?seq_contains("druid")
+<#if supported_classes?seq_contains("cleric")
+  || supported_classes?seq_contains("druid")
 >
 // blade barrier
 IF
@@ -114,8 +114,8 @@ END
 -->
 
 <#--
-<#if supportedClasses?seq_contains("cleric")
-  || supportedClasses?seq_contains("druid")
+<#if supported_classes?seq_contains("cleric")
+  || supported_classes?seq_contains("druid")
 >
 // hold person
 IF
@@ -135,8 +135,8 @@ END
 -->
 
 <#--
-<#if supportedClasses?seq_contains("cleric")
-  || supportedClasses?seq_contains("druid")
+<#if supported_classes?seq_contains("cleric")
+  || supported_classes?seq_contains("druid")
 >
 // circle of bones
 IF
@@ -154,8 +154,8 @@ END
 </#if>
 -->
 
-<#if supportedClasses?seq_contains("cleric")
-  || supportedClasses?seq_contains("druid")
+<#if supported_classes?seq_contains("cleric")
+  || supported_classes?seq_contains("druid")
 >
 // holy smite (${spells["CLERIC_HOLY_SMITE"].aoe}' radius)
 IF
@@ -170,7 +170,7 @@ THEN
 END
 </#if>
 
-<#if supportedClasses?seq_contains("druid")>
+<#if supported_classes?seq_contains("druid")>
 // static charge
 IF
   <@canCastSpell "CLERIC_STATIC_CHARGE"/>
@@ -185,7 +185,7 @@ THEN
 END
 </#if>
 
-<#if supportedClasses?seq_contains("druid")>
+<#if supported_classes?seq_contains("druid")>
 // call lightning
 IF
   <@canCastSpell "CLERIC_CALL_LIGHTNING"/>
@@ -201,7 +201,7 @@ THEN
 END
 </#if>
 
-<#if supportedClasses?seq_contains("druid")>
+<#if supported_classes?seq_contains("druid")>
 // sol's searing orb
 IF
   <@canCastSpell "CLERIC_SOLS_SEARING_ORB"/>
@@ -213,7 +213,7 @@ THEN
 END
 </#if>
 
-<#if supportedClasses?seq_contains("druid")>
+<#if supported_classes?seq_contains("druid")>
 // alicorn lance
 IF
   <@canCastSpell "CLERIC_ALICORN_LANCE"/>
@@ -225,7 +225,7 @@ THEN
 END
 </#if>
 
-<#if supportedClasses?seq_contains("druid")>
+<#if supported_classes?seq_contains("druid")>
 // sunscorch
 IF
   <@canCastSpell "CLERIC_SUNSCORCH"/>
@@ -237,7 +237,7 @@ THEN
 END
 </#if>
 
-<#if supportedClasses?seq_contains("paladin")>
+<#if supported_classes?seq_contains("paladin")>
 // smite evil
 IF
   <@canCastSpell "PALADIN_SMITE_EVIL"/>

@@ -1,7 +1,7 @@
 <#-- vim: set syntax=ftl: -->
 
 <#assign
-  supportedClasses = [
+  supported_classes = [
     "fighter",
     "mage",
     "cleric",
@@ -16,7 +16,7 @@
   ]
 />
 
-<#assign numberOfPlayers = 5 />
+<#assign number_of_players = 5 />
 
 <#assign
   playerFollow = {

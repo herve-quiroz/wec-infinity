@@ -2,7 +2,7 @@
 <#include "../util/macros.ftl">
 <#include "../util/config.ftl"/>
 
-<#if supportedClasses?seq_contains("thief")>
+<#if supported_classes?seq_contains("thief")>
 
 <@section "thief abilities" />
 

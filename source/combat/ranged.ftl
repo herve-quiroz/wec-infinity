@@ -7,7 +7,7 @@
 <#if supportedCombatModes?seq_contains("ranged")>
 <@section "combat for ranged players" />
 
-<#list 1..numberOfPlayers as player>
+<#list 1..number_of_players as player>
 <#if playerCombat["Player" + player].mode = "ranged">
 
 // player ${player}: force melee attack on nearest enemy when in close combat
