@@ -6,7 +6,7 @@ FTL_SCRIPTS=	$(wildcard source/*-bg2.ftl) $(wildcard source/*-iwd2.ftl)
 BS_SCRIPTS=	$(patsubst source/%, build/%, $(patsubst %.ftl, %.bs, $(FTL_SCRIPTS)))
 
 .SUFFIXES: .ftl .bs .baf
-.PRECIOUS: .bs .baf
+.PRECIOUS: build/%.bs build/%.baf
 
 all: $(BS_SCRIPTS)
 

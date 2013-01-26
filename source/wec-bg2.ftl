@@ -1,6 +1,7 @@
 <#-- vim: set syntax=ftl: -->
 
 <#assign
+  combat_melee_distance = 2
   follow_mode = "follow-previous"
   follow_distance_minimum = 5
   follow_distance_maximum = 10
