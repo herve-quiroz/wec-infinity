@@ -40,13 +40,14 @@ else
 fi
 
 rm -f "${error}"
+rm -f "${target}"
 (cd tools/aicompile/${compiler} && cmd /c aicompile.exe FILE ..\\..\\..\\${win_source} ..\\..\\..\\${win_error} ..\\..\\..\\${win_target})
 if [ -f "${error}" ]
 then
-	if [ `stat --format=%s ${error}` -gt 0 ]
-	then
-		rm -f "${target}"
-		cat "${error}"
-		false
-	fi
+  if [ `stat --format=%s ${error}` -gt 0 ]
+  then
+    rm -f "${target}"
+    cat "${error}"
+    false
+  fi
 fi
