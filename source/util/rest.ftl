@@ -8,7 +8,7 @@ THEN
   RESPONSE #100
   <#if game = "iwd">
   RestUntilHealed()
-  <#elseif game = "bg2">
+  <#else>
   Rest()  
   </#if>
 END
