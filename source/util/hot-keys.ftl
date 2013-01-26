@@ -11,7 +11,7 @@
     "forceMeleeAttack":"E",
     "indoor":"Y",
     "outdoor":"H",
-    "rest":"R",
+    "rest":"T",
     "setFormation0":"G",
     "setFormation1":"T",
     "setFormation2":"Y",
