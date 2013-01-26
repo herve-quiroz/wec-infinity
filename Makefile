@@ -2,7 +2,7 @@
 
 GAME_ROOT?=	..
 FTL_FILES=	$(shell find source -name *.ftl)
-FTL_SCRIPTS=	$(wildcard source/*-bg2.ftl)
+FTL_SCRIPTS=	$(wildcard source/*-bg2.ftl) $(wildcard source/*-iwd2.ftl)
 BS_SCRIPTS=	$(patsubst source/%, build/%, $(patsubst %.ftl, %.bs, $(FTL_SCRIPTS)))
 
 .SUFFIXES: .ftl .bs .baf
@@ -32,6 +32,17 @@ tools/aicompile/bg2/aicompile.exe:
 	@mkdir -pv build
 	@cd build && wget http://download.trancecode.org/infinity/bg2/bg2-aicompiler.zip
 	@unzip -o -d tools/aicompile/bg2/ build/bg2-aicompiler.zip
+
+build/%-iwd2.bs: build/%-iwd2.baf aicompile.sh aicompile-iwd2
+	./aicompile.sh iwd2 $< $@
+
+aicompile-iwd2: tools/aicompile/iwd2/aicompile.exe
+
+tools/aicompile/iwd2/aicompile.exe:
+	@mkdir -pv "tools/aicompile/iwd2"
+	@mkdir -pv build
+	@cd build && wget http://download.trancecode.org/infinity/iwd2/iwd2-aicompiler.zip
+	@unzip -o -d tools/aicompile/iwd2/ build/iwd2-aicompiler.zip
 
 install: $(BS_SCRIPTS)
 	@cp -v $+ $(GAME_ROOT)/scripts
