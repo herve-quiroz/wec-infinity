@@ -24,6 +24,7 @@ END
 IF
   <@isGeneralClass "Myself" "THIEF"/>
   ActionListEmpty()
+  !Exists([EVILCUTOFF])
   !ModalState(DETECTTRAPS)
   CheckStatGT(Myself,50,TRAPS)
   !ModalState(STEALTH)
